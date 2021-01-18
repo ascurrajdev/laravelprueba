@@ -1,0 +1,32 @@
+{
+    "name": "ascurrajdev/laravelprueba",
+    "description": "Paquete de pruebas para el framework de Laravel",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Jose Ascurra",
+            "email": "joseascurra123@gmail.com"
+        }
+    ],
+    "minimum-stability": "dev",
+    "autoload": {
+        "psr-4": {
+            "Prueba\\" : "src/"
+        }
+    },
+    "require": {},
+    "require-dev": {
+        "orchestra/testbench": "^6.0"
+    },
+    "extra": {
+        "laravel":{
+            "providers":[
+                "Prueba\\Providers\\LaravelPruebaProvider"
+            ],
+            "aliases":{
+                "LaravelPrueba": "Prueba\\Facades\\LaravelPrueba"
+            }
+        }
+    }
+}
