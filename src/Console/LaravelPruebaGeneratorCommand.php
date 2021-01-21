@@ -3,7 +3,7 @@ namespace Prueba\Console;
 
 use Illuminate\Console\GeneratorCommand;
 
-class LaravelPruebaGeneratorCommand extends Command{
+class LaravelPruebaGeneratorCommand extends GeneratorCommand{
 
     protected $name = "make:prueba";
     
