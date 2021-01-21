@@ -3,6 +3,7 @@ namespace Prueba\Providers;
 
 use Illuminate\Support\ServiceProvider;
 use Prueba\Console\LaravelPruebaCommand;
+use Prueba\Console\LaravelPruebaGeneratorCommand;
 use Prueba\Classes\LaravelPrueba;
 
 class LaravelPruebaProvider extends ServiceProvider{
