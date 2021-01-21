@@ -1,8 +1,8 @@
 <?php
 
-namespace NamespaceComodin;
+namespace DummyNamespace;
 
-class ClaseComodin{
+class DummyClass{
 
     public function myPrueba(){
         
