@@ -18,6 +18,7 @@ class LaravelPruebaProvider extends ServiceProvider{
         if($this->app->runningInConsole()){
             $this->commands([
                 LaravelPruebaCommand::class,
+                LaravelPruebaGeneratorCommand::class,
             ]);
             $this->publishes([
                 __DIR__.'/../config/config.php' => config_path('pruebalaravel.php'),
