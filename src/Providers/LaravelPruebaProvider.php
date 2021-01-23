@@ -25,7 +25,7 @@ class LaravelPruebaProvider extends ServiceProvider{
             ],'config');
             if(!class_exists('CreatePostsTable')){
                 $this->publishes([
-                    __DIR__.'/../database/migrations/create_posts_table.php.stub' => database_path('migrations/'.date('Y_m_d_His',time())."create_posts_table.php")
+                    __DIR__.'/../database/migrations/create_posts_table.php.stub' => database_path('migrations/'.date('Y_m_d_His',time())."_create_posts_table.php")
                 ],'migrations');
             }
         }
