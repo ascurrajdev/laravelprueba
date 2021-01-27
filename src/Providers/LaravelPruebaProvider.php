@@ -13,6 +13,7 @@ class LaravelPruebaProvider extends ServiceProvider{
         $this->app->bind('prueba',function($app){
             return new LaravelPrueba();
         });
+        $this->mergeConfigFrom(__DIR__."/../../config/config.php","pruebalaravel");
     }
 
     public function boot(){
@@ -31,7 +32,6 @@ class LaravelPruebaProvider extends ServiceProvider{
             // }
         }
         $this->loadMigrationsFrom(__DIR__."/../../database/migrations");
-        $this->mergeConfigFrom(__DIR__."/../../config/config.php","pruebalaravel");
         $this->registerRoutes();
     }
 
