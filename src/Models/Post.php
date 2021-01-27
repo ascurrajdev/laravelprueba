@@ -9,6 +9,9 @@ class Post extends Model
 {
     use HasFactory;
 
+    protected $fillable = [
+        'title','descripcion'
+    ];
     public function autor(){
         return $this->morphTo();
     }

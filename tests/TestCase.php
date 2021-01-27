@@ -17,7 +17,9 @@ class TestCase extends OrchestraTestCase{
 
     protected function getEnvironmentSetUp($app){
         require_once __DIR__.'/../database/migrations/create_posts_table.php.stub';
+        require_once __DIR__.'/../database/migrations/create_users_table.php.stub';
 
         (new \CreatePostsTable)->up();
+        (new \CreateUsersTable)->up();
     }
 }

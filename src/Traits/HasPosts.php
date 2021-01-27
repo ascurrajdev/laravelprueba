@@ -4,6 +4,6 @@ use Prueba\Models\Post;
 
 trait HasPosts{
     public function posts(){
-        return $this->morphToMany(Post::class,'autor');
+        return $this->morphMany(Post::class,'autor');
     }
 }
