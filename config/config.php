@@ -1,5 +1,6 @@
 <?php
 
 return [
-    "table_prueba" => "posts"
+    "prefix" => "prueba",
+    "middleware" => ["web"]
 ];

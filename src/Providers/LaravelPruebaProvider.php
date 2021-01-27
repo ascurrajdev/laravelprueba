@@ -2,6 +2,7 @@
 namespace Prueba\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Illuminate\Support\Facades\Route;
 use Prueba\Console\LaravelPruebaCommand;
 use Prueba\Console\LaravelPruebaGeneratorCommand;
 use Prueba\Classes\LaravelPrueba;
@@ -31,5 +32,19 @@ class LaravelPruebaProvider extends ServiceProvider{
         }
         $this->loadMigrationsFrom(__DIR__."/../../database/migrations");
         $this->mergeConfigFrom(__DIR__."/../../config/config.php","pruebalaravel");
+        $this->registerRoutes();
+    }
+
+    private function registerRoutes(){
+        Route::group($this->routeConfiguration(),function(){
+            $this->loadRoutesFrom(__DIR__.'/../../routes/web.php');
+        });
+    }
+
+    private function routeConfiguration(){
+        return [
+            'prefix' => config('pruebalaravel.prefix'),
+            'middleware' => config('pruebalaravel.middleware'),
+        ];
     }
 }
