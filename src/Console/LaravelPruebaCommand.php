@@ -17,8 +17,12 @@ class LaravelPruebaCommand extends Command{
         ]);
         $this->call('vendor:publish',[
             '--provider' => 'Prueba\Providers\LaravelPruebaProvider',
-            '--tag' => 'migrations'
+            '--tag' => 'views',
         ]);
+        // $this->call('vendor:publish',[
+        //     '--provider' => 'Prueba\Providers\LaravelPruebaProvider',
+        //     '--tag' => 'migrations'
+        // ]);
         $this->info('El paquete ha sido instalado correctamente');
     }
 }

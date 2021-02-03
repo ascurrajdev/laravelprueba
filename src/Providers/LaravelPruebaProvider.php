@@ -25,12 +25,16 @@ class LaravelPruebaProvider extends ServiceProvider{
             $this->publishes([
                 __DIR__.'/../../config/config.php' => config_path('pruebalaravel.php'),
             ],'config');
+            $this->publishes([
+                __DIR__.'/../../resources/views' => resource_path('views/vendor/laravelprueba')
+            ],'views');
             // if(!class_exists('CreatePostsTable')){
             //     $this->publishes([
             //         __DIR__.'/../database/migrations/create_posts_table.php.stub' => database_path('migrations/'.date('Y_m_d_His',time())."_create_posts_table.php")
             //     ],'migrations');
             // }
         }
+        $this->loadViewsFrom(__DIR__.'/../../resources/views','laravelprueba');
         $this->loadMigrationsFrom(__DIR__."/../../database/migrations");
         $this->registerRoutes();
     }
